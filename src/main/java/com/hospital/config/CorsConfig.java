@@ -1,4 +1,4 @@
-package com.hospital.config;
+package com.hospital.config; // update to your package
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,8 +13,11 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**")  // allow all endpoints
-                        .allowedOrigins("http://localhost:5173") // React frontend
+                registry.addMapping("/**")
+                        .allowedOrigins(
+                            "https://hospital-frontend-sbyc.onrender.com/", // ✅ your frontend on Render
+                            "http://localhost:3000"                // ✅ local dev React
+                        )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
