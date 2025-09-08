@@ -112,7 +112,7 @@
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
-                            <version>1.18.30</version> <!-- ✅ version added -->
+                            <version>1.18.30</version> <!-- ✅ version fixed -->
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
@@ -122,6 +122,13 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal> <!-- ✅ ensures fat JAR -->
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
                     <mainClass>com.hospital.HospitalManagementApplication</mainClass>
                 </configuration>
