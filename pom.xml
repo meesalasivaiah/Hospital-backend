@@ -130,7 +130,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.hospital.HospitalManagementApplication</mainClass>
+                    <mainClass>com.hospital.HospitalAppointmentSystemApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
